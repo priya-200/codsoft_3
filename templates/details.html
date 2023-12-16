@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Forecast</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.unsplash.com/photo-1548266652-99cf27701ced?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 5em;
+            background-color: rgba(255, 255, 255, 0.0); /* White background with 70% opacity */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .card {
+            width: 30rem; /* Adjust the width as needed */
+            margin: auto; /* Center the card */
+            margin-top: 20px; /* Add some top margin for spacing */
+        }
+    </style>
+</head>
+<body>
+
+<div>
+   <p style="font-size: 2rem; text-align: center; color: white;">To tell you all about the weather</p>
+    <h1>WEATHER FORECAST</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Weather Details</h5>
+            <p>The city: {{ response.location.name }} located in {{ response.location.country }}</p><br>
+            <p>Temperature in celsius: {{ response.current.temp_c }}</p><br>
+            <p>Climate: {{ response.current.condition.text }}</p><br>
+            <p>Humidity: {{ response.current.humidity }}%</p><br>
+            <p>Wind Speed: {{ response.current.wind_kph }} in Kph</p><br>
+            <p>Wind Direction: {{ response.current.wind_dir }}</p><br>
+            <p>Precipitation: {{ response.current.precip_mm }} mm</p><br>
+            <p>How Does It Feel: {{ response.current.feelslike_c }}°C</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
